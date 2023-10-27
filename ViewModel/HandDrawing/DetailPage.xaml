@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PD_UI.ViewModel.HandDrawing.DetailPage"
+             Title="DetailPage">
+    <ScrollView>
+        <VerticalStackLayout >
+            <HorizontalStackLayout BackgroundColor="LightBlue">
+
+                <VerticalStackLayout VerticalOptions="Center" >
+                    <Frame>
+
+                    </Frame>
+
+                    <VerticalStackLayout BackgroundColor="White" WidthRequest="500" VerticalOptions="Center" Margin="350,50,1000,30" Padding="40">
+
+                        <VerticalStackLayout BackgroundColor="Beige" Spacing="20"  Padding="40">
+
+                            <StackLayout Orientation="Horizontal" Spacing="50">
+                                <Label Text="Name :" />
+                                <Entry x:Name="NameEntry" Placeholder="Enter your name" />
+
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal" Spacing="65">
+                                <Label Text="Age :"/>
+                                <Entry x:Name="AgeEntry" Placeholder="Enter your Age" WidthRequest="126"/>
+
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal" Spacing="40">
+                                <Label Text="Select your Symptoms :"/>
+
+                                <VerticalStackLayout>
+                                    <StackLayout Orientation="Horizontal" >
+                                        <CheckBox x:Name="option1" />
+                                        <Label Text="Hand Tremor" Margin="5"/>
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Horizontal">
+                                        <CheckBox x:Name="option2" />
+                                        <Label Text="Loss of Smell" Margin="5"/>
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Horizontal">
+                                        <CheckBox x:Name="option3" />
+                                        <Label Text="Loss of Tasty" Margin="5" />
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Horizontal" >
+                                        <CheckBox x:Name="option4" />
+                                        <Label Text="Trouble Sleeping" Margin="5"/>
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Horizontal" >
+                                        <CheckBox x:Name="option5" />
+                                        <Label Text="Dizziness or Fainting" Margin="5"/>
+                                    </StackLayout>
+
+                                </VerticalStackLayout>
+
+                            </StackLayout>
+
+                        </VerticalStackLayout>
+
+                        <Label x:Name="resultLabel" Text="Result"/>
+                        <Button 
+                            x:Name="DetailPageButton"
+                            Text="Next" 
+                            MaximumWidthRequest="100" 
+                            Clicked="NextClicked" />
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+
+
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

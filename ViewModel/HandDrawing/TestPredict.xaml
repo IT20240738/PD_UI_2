@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PD_UI.ViewModel.HandDrawing.TestPredict"
+             Title="TestPredict">
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            BackgroundColor="CornflowerBlue">
+
+
+
+            <Image
+                x:Name="Image_Upload"
+                HeightRequest="400"
+                WidthRequest="400"
+                HorizontalOptions="Center" />
+            <Label
+                x:Name="ImagePathLable"
+                Text=""/>
+
+            <Label
+                Text="Upload Test Image!"
+              
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <VerticalStackLayout HorizontalOptions="Center" Spacing="40" >
+                <Button
+                x:Name="UploadImage2"
+                Text="Upload Image"
+                Clicked="UploadImage2_Clicked"
+                HorizontalOptions="Center" />
+
+
+                <Button
+                x:Name="CloseButton2"
+                Text="Close"
+                Clicked="CloseButton2_Clicked"
+                HorizontalOptions="Center"/>
+
+
+
+            </VerticalStackLayout>
+
+            <HorizontalStackLayout>
+                <Label
+                x:Name=" ApiResponseLabel"
+                Text=""/>
+
+            </HorizontalStackLayout>
+
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+
+</ContentPage>

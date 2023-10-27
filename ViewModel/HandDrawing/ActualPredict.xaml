@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PD_UI.ViewModel.HandDrawing.ActualPredict"
+             Title="ActualPredict">
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                x:Name="Image_Upload"
+                HeightRequest="400"
+                WidthRequest="400"
+                HorizontalOptions="Center" />
+            <Label
+                x:Name="ImagePathLable"
+                Text=""/>
+
+            <Label
+                Text="Upload Autual Image!"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+
+            <Button
+                Text="Upload Image"
+                Clicked="UploadImage_Clicked"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="CloseButton"
+                Text="Close"
+                Clicked="CloseButton_Clicked"
+                HorizontalOptions="Center"/>
+
+            <Label
+                x:Name="ApiResponseLabel"
+                Text=""/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
