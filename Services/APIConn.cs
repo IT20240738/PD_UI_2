@@ -48,6 +48,10 @@ namespace PD_UI.Services
             form.Add(new StringContent("789"), "userId");
             form.Add(new StringContent("some comments"), "comment");
             form.Add(new StringContent("true"), "isPrimary");
+            //Create a FileStream from the image file
+            //using var stream = new FileStream(imagePath, FileMode.Open);
+            //form.Add(new StreamContent(stream), "file", Path.GetFileName(imagePath));
+
 
             Uri uri = new Uri(string.Format("http://localhost:8000/predictSpiral", string.Empty));
             try

@@ -18,8 +18,8 @@ namespace PD_UI.Services
                 });
                 if (result.ContentType == "image/png" ||
                     result.ContentType == "image/jpeg" ||
-                    result.ContentType == "image/jpg" ||
-                    result.ContentType == "image/jfif")
+                    result.ContentType == "image/jfif" ||
+                    result.ContentType == "image/jpg")
                     return result;
                 else
                     await App.Current.MainPage.DisplayAlert("Error Type Image", "Please choose new image", "Ok");

@@ -4,32 +4,62 @@
              x:Class="PD_UI.ViewModel.HandDrawing.DetailPage"
              Title="DetailPage">
     <ScrollView>
-        <VerticalStackLayout >
-            <HorizontalStackLayout BackgroundColor="LightBlue">
 
-                <VerticalStackLayout VerticalOptions="Center" >
-                    <Frame>
+        <VerticalStackLayout>
+         
+            <VerticalStackLayout BackgroundColor="Orange" HeightRequest="88" WidthRequest="1500" HorizontalOptions="Start" >
+                <Label FontSize="38" FontAttributes="Bold" FontFamily="Times New Roman" Padding="20" TextColor="White">Detail Page</Label>
+                <HorizontalStackLayout>
+                    <Image Source="C:\Users\USER\Desktop\MAUI_APP\PD_UI\Resources\Images\logopdnew.png" 
+                       WidthRequest="350" 
+                       HeightRequest="900"
+                       Margin="930,-490,0,-350"
+                       />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
 
-                    </Frame>
+            <VerticalStackLayout BackgroundColor="LightGrey" HeightRequest="550" Margin="0,0,0,0">
 
-                    <VerticalStackLayout BackgroundColor="White" WidthRequest="500" VerticalOptions="Center" Margin="350,50,1000,30" Padding="40">
+                <Grid>
+                    <HorizontalStackLayout 
+                        BackgroundColor="WhiteSmoke" 
+                        WidthRequest="520"
+                        HeightRequest="470"
+                        Padding="50"
+                        Margin="50"
+                        HorizontalOptions="Start">
 
-                        <VerticalStackLayout BackgroundColor="Beige" Spacing="20"  Padding="40">
+
+                        <VerticalStackLayout BackgroundColor="White" Spacing="20" WidthRequest="480" Margin="-30" Padding="40,25,0,0">
+
+                                    <StackLayout Orientation="Horizontal" Spacing="50">
+                                <Label FontFamily="Times New Roman" TextColor="Black" FontAttributes="Bold" FontSize="18" Text="Name :" />
+                                        <Entry x:Name="NameEntry" Placeholder="Enter your name" />
+
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Horizontal" Spacing="65">
+                                <Label  FontFamily="Times New Roman" TextColor="Black" FontAttributes="Bold" FontSize="18" Text="Age :"/>
+                                        <Entry x:Name="AgeEntry" Placeholder="Enter your Age" WidthRequest="126"/>
+
+                                    </StackLayout>
 
                             <StackLayout Orientation="Horizontal" Spacing="50">
-                                <Label Text="Name :" />
-                                <Entry x:Name="NameEntry" Placeholder="Enter your name" />
+                                <Label  FontFamily="Times New Roman" TextColor="Black" FontAttributes="Bold" FontSize="18" Text="Gender :" />
+                                <VerticalStackLayout>
+                                    <StackLayout Orientation="Horizontal" >
+                                        <CheckBox x:Name="option6" />
+                                        <Label Text="Male" Margin="5"/>
+                                        <CheckBox x:Name="option7" />
+                                        <Label Text="Female" Margin="5"/>
+                                    </StackLayout>
+                                </VerticalStackLayout>
 
                             </StackLayout>
 
-                            <StackLayout Orientation="Horizontal" Spacing="65">
-                                <Label Text="Age :"/>
-                                <Entry x:Name="AgeEntry" Placeholder="Enter your Age" WidthRequest="126"/>
-
-                            </StackLayout>
 
                             <StackLayout Orientation="Horizontal" Spacing="40">
-                                <Label Text="Select your Symptoms :"/>
+                                <Label  FontFamily="Times New Roman" TextColor="Black" FontAttributes="Bold" FontSize="18"  Text="Select your Symptoms :"/>
 
                                 <VerticalStackLayout>
                                     <StackLayout Orientation="Horizontal" >
@@ -58,24 +88,72 @@
                                     </StackLayout>
 
                                 </VerticalStackLayout>
-
                             </StackLayout>
+    
+                            <VerticalStackLayout>
+                                
+                             <Button 
+                                x:Name="DetailPageButton"
+                                Text="Process" 
+                                MaximumWidthRequest="100" 
+                                Clicked="NextClicked" 
+                                BackgroundColor="Green"
+                                Margin="0,10,-300,0" />
+                            </VerticalStackLayout>
+
+                        </VerticalStackLayout>
+                         
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout BackgroundColor="White" 
+                        WidthRequest="500"
+                        HeightRequest="470"
+                        Margin="50,0,50,0"
+                        HorizontalOptions="End">
+
+                        <VerticalStackLayout>
+                            <Label
+                                    Text="Pre requirements: "
+                                    FontAttributes="Bold" FontFamily="Times New Roman"
+                                    FontSize="30"
+                                    Margin="30">
+                            </Label>
+
+                            <Label
+                                    x:Name="ApiResponseLabel"
+                                    Margin="100,0,-1000,0"
+                                    TextColor="Black"
+                                    
+                                    Text=""/>
+
+                            <Label
+                                    BackgroundColor="WhiteSmoke"
+                                    HeightRequest="350"         
+                                    x:Name="PreDescription"
+                                    Margin="20,-35,0,-210"
+                                    LineBreakMode="WordWrap"
+                                    WidthRequest="460"
+                                    Padding="15"
+                                    Opacity="0.8"
+                                    FontAttributes="Bold"
+                                    FontFamily="Times New Roman"
+                                    TextColor="Black"
+                                    VerticalTextAlignment="Center"
+                                    Text=""/>
 
                         </VerticalStackLayout>
 
-                        <Label x:Name="resultLabel" Text="Result"/>
-                        <Button 
-                            x:Name="DetailPageButton"
-                            Text="Next" 
-                            MaximumWidthRequest="100" 
-                            Clicked="NextClicked" />
-                    </VerticalStackLayout>
-
-                </VerticalStackLayout>
+                    </HorizontalStackLayout>
+                </Grid>
 
 
-            </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout BackgroundColor="Orange" HeightRequest="55">
+            </VerticalStackLayout>
+
         </VerticalStackLayout>
+
     </ScrollView>
 
 </ContentPage>

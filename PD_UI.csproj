@@ -49,6 +49,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\logopdnew.png" />
+	  <None Remove="Resources\Images\upload.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <MauiXaml Update="ViewModel\HandDrawing\ActualPredict.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

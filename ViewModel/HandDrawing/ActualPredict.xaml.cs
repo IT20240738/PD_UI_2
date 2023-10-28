@@ -21,7 +21,7 @@ public partial class ActualPredict : ContentPage
 
         // Display the uploaded image path
         string imagePath = imagefile.Path;
-        ImagePathLable.Text = "Image Path: " + imagefile.Path;
+        //ImagePathLable.Text = "Image Path: " + imagefile.Path;
         //DisplayAlert("Image Upload Path", imagePath, "OK");
 
         // Pass the dynamically obtained image path to the RestService
@@ -38,16 +38,18 @@ public partial class ActualPredict : ContentPage
         {
             // Handle the API response as needed
             ApiResponseLabel.Text = "API Response: " + apiResponse;
+            Description.Text = "This is a not actual result. So you meet your doctor and get best solutin. Good wishes for uoyr future health.";
+            Description.LineBreakMode = LineBreakMode.WordWrap;
         }
         else
         {
             // Handle the case where the API request was not successful
         }
 
-
     }
     private async void CloseButton_Clicked(object sender, EventArgs e)
     {
-        Navigation.PushModalAsync(new DetailPage());
+       await Navigation.PushModalAsync(new DetailPage());
     }
+
 }

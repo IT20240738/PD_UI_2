@@ -4,42 +4,138 @@
              x:Class="PD_UI.ViewModel.HandDrawing.ActualPredict"
              Title="ActualPredict">
     <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
+       
+            <VerticalStackLayout>
 
-            <Image
-                x:Name="Image_Upload"
-                HeightRequest="400"
-                WidthRequest="400"
-                HorizontalOptions="Center" />
-            <Label
-                x:Name="ImagePathLable"
-                Text=""/>
-
-            <Label
-                Text="Upload Autual Image!"
-                FontSize="32"
-                HorizontalOptions="Center" />
+                <VerticalStackLayout BackgroundColor="Orange" HeightRequest="88" WidthRequest="1500" HorizontalOptions="Start" >
+                    <Label FontSize="38" FontAttributes="Bold" FontFamily="Times New Roman" Padding="20" TextColor="White">Upload Image</Label>
+                    <HorizontalStackLayout>
+                        <Image Source="C:\Users\USER\Desktop\MAUI_APP\PD_UI\Resources\Images\logopdnew.png" 
+                       WidthRequest="350" 
+                       HeightRequest="900"
+                       Margin="930,-490,0,-350"
+                       />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
 
 
-            <Button
-                Text="Upload Image"
-                Clicked="UploadImage_Clicked"
-                HorizontalOptions="Center" />
 
-            <Button
-                x:Name="CloseButton"
-                Text="Close"
-                Clicked="CloseButton_Clicked"
-                HorizontalOptions="Center"/>
+                <VerticalStackLayout BackgroundColor="LightGrey" HeightRequest="550" Margin="0,0,0,0">
 
-            <Label
-                x:Name="ApiResponseLabel"
-                Text=""/>
+                    <Grid>
+                        <HorizontalStackLayout 
+                        BackgroundColor="WhiteSmoke" 
+                        WidthRequest="600"
+                        HeightRequest="470"
+                        Padding="50"
+                        Margin="50"
+                        HorizontalOptions="Start">
 
-        </VerticalStackLayout>
+
+                            <VerticalStackLayout>
+                                <VerticalStackLayout>
+                                    <Image Source="C:\Users\USER\Desktop\MAUI_APP\PD_UI\Resources\Images\upload.png"
+                                       WidthRequest="150"
+                                       HeightRequest="150"
+                                       Margin="150,0,40,0"
+                                       Opacity="0.5">
+
+                                    </Image>
+                                </VerticalStackLayout>
+                                <Image
+                                x:Name="Image_Upload"
+                                HeightRequest="250"
+                                WidthRequest="250"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                Margin="100,-150,0,0"/>
+
+
+
+                                <Label
+                                Text="Upload Autual Image!"
+                                FontSize="20"
+                                HorizontalOptions="Center" 
+                                Margin="150,50,0,100"/>
+
+                                <Button
+                                Text="Upload Image"
+                                Clicked="UploadImage_Clicked"
+                                HorizontalOptions="Center"
+                                BackgroundColor="Green"
+                                Margin="140,-100,0,0"/>
+
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout BackgroundColor="White" 
+                        WidthRequest="500"
+                        HeightRequest="470"
+                        Margin="50,0,50,0"
+                        HorizontalOptions="End">
+
+                            <VerticalStackLayout>
+                                <Label
+                                    Text="Prediction: "
+                                    FontAttributes="Bold" FontFamily="Times New Roman"
+                                    FontSize="30"
+                                    Margin="30">
+                                </Label>
+
+                                <Label
+                                    x:Name="ApiResponseLabel"
+                                    Margin="100,0,-1000,0"
+                                    TextColor="Black"
+                                    
+                                    Text=""/>
+
+                                <Label
+                                    BackgroundColor="LightSkyBlue"
+                                    HeightRequest="100"         
+                                    x:Name="Description"
+                                    Margin="20,120,0,-210"
+                                    LineBreakMode="WordWrap"
+                                    WidthRequest="460"
+                                    Padding="15"
+                                    Opacity="0.8"
+                                    FontAttributes="Bold"
+                                    FontFamily="Times New Roman"
+                                    TextColor="Black"
+                                    VerticalTextAlignment="Center"
+                                    Text=""/>
+
+
+                            <Button
+                                x:Name="CloseButton"
+                                Text="Close"
+                                Clicked="CloseButton_Clicked"
+                                HorizontalOptions="Center"
+                                BackgroundColor="Red"
+                                Margin="290,250,10,0"
+                                WidthRequest="100"/>
+                                
+                                <Button
+                                x:Name="ResultButton"
+                                Text="Result"
+                                WidthRequest="100"
+                              
+                                BackgroundColor="Blue"
+                                 Margin="-100,-40,110,40"
+                              />
+
+                            </VerticalStackLayout>
+
+                        </HorizontalStackLayout>
+                    </Grid>
+
+
+                </VerticalStackLayout>
+
+                <VerticalStackLayout BackgroundColor="Orange" HeightRequest="55">
+                </VerticalStackLayout>
+
+            </VerticalStackLayout>
+       
     </ScrollView>
 
 </ContentPage>
