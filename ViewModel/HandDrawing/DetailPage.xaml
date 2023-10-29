@@ -7,7 +7,7 @@
 
         <VerticalStackLayout>
          
-            <VerticalStackLayout BackgroundColor="Orange" HeightRequest="88" WidthRequest="1500" HorizontalOptions="Start" >
+            <VerticalStackLayout BackgroundColor="LightSkyBlue" HeightRequest="88" WidthRequest="1500" HorizontalOptions="Start" >
                 <Label FontSize="38" FontAttributes="Bold" FontFamily="Times New Roman" Padding="20" TextColor="White">Detail Page</Label>
                 <HorizontalStackLayout>
                     <Image Source="C:\Users\USER\Desktop\MAUI_APP\PD_UI\Resources\Images\logopdnew.png" 
@@ -33,16 +33,23 @@
                         <VerticalStackLayout BackgroundColor="White" Spacing="20" WidthRequest="480" Margin="-30" Padding="40,25,0,0">
 
                                     <StackLayout Orientation="Horizontal" Spacing="50">
-                                <Label FontFamily="Times New Roman" TextColor="Black" FontAttributes="Bold" FontSize="18" Text="Name :" />
-                                        <Entry x:Name="NameEntry" Placeholder="Enter your name" />
+                                        <Label FontFamily="Times New Roman" TextColor="Black" FontAttributes="Bold" FontSize="18" Text="Name :" />
+                                <Entry x:Name="NameEntry" Placeholder="Enter your name"/>
 
-                                    </StackLayout>
+
+
+                            </StackLayout>
 
                                     <StackLayout Orientation="Horizontal" Spacing="65">
-                                <Label  FontFamily="Times New Roman" TextColor="Black" FontAttributes="Bold" FontSize="18" Text="Age :"/>
-                                        <Entry x:Name="AgeEntry" Placeholder="Enter your Age" WidthRequest="126"/>
+                                        <Label  FontFamily="Times New Roman" TextColor="Black" FontAttributes="Bold" FontSize="18" Text="Age :"/>
+                                            <Entry x:Name="AgeEntry" Placeholder="Enter your Age" WidthRequest="126"  Keyboard="Numeric"/>
+                              
+                            </StackLayout>
+                            
 
-                                    </StackLayout>
+                            <StackLayout Orientation="Horizontal" Spacing="50">
+                                <Label x:Name="AgeErrorLabel" Text="Please enter a valid age >18 (numbers only)" TextColor="Red" IsVisible="false" LineBreakMode="WordWrap" WidthRequest="303"/>
+                            </StackLayout>
 
                             <StackLayout Orientation="Horizontal" Spacing="50">
                                 <Label  FontFamily="Times New Roman" TextColor="Black" FontAttributes="Bold" FontSize="18" Text="Gender :" />
@@ -99,6 +106,9 @@
                                 Clicked="NextClicked" 
                                 BackgroundColor="Green"
                                 Margin="0,10,-300,0" />
+
+                                <Label x:Name="errorLabel" TextColor="Red" IsVisible="false" />
+                                
                             </VerticalStackLayout>
 
                         </VerticalStackLayout>
@@ -115,8 +125,8 @@
                             <Label
                                     Text="Pre requirements: "
                                     FontAttributes="Bold" FontFamily="Times New Roman"
-                                    FontSize="30"
-                                    Margin="30">
+                                    FontSize="20"
+                                    Margin="20">
                             </Label>
 
                             <Label
@@ -127,8 +137,8 @@
                                     Text=""/>
 
                             <Label
-                                    BackgroundColor="WhiteSmoke"
-                                    HeightRequest="350"         
+                                    BackgroundColor="WhiteSmoke"                                 
+                                    HeightRequest="400"         
                                     x:Name="PreDescription"
                                     Margin="20,-35,0,-210"
                                     LineBreakMode="WordWrap"
@@ -140,6 +150,70 @@
                                     TextColor="Black"
                                     VerticalTextAlignment="Center"
                                     Text=""/>
+                            
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Margin="-450,50,0,0">
+                            <Label LineBreakMode="WordWrap" WidthRequest="450">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="• " FontAttributes="Bold" FontSize="25" />
+                                        <Span Text="Use an image with at least 256x256 pixels, but higher resolutions are better. Keep the file size reasonable for easy uploading." FontSize="14"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label LineBreakMode="WordWrap" WidthRequest="450" >
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="• " FontAttributes="Bold" FontSize="25" />
+                                        <Span Text="Use common formats like JPEG, PNG, or GIF based on your needs." FontSize="14" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label LineBreakMode="WordWrap" WidthRequest="450">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="• " FontAttributes="Bold" FontSize="25" />
+                                        <Span Text="Ensure the image is clear and high-quality, avoiding blurriness, pixelation, or distortion as they can impact the results you'll obtain." FontSize="14" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label LineBreakMode="WordWrap" WidthRequest="450" >
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="• " FontAttributes="Bold" FontSize="25" />
+                                        <Span Text="If your task involves object recognition or analysis, consider using a plain and consistent background to make it easier for the system to focus on the main subject." FontSize="14" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label LineBreakMode="WordWrap" WidthRequest="450" >
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="• " FontAttributes="Bold" FontSize="25" />
+                                        <Span Text="Make sure there are no obstructions or reflections that could obscure the subject of your image." FontSize="14" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label LineBreakMode="WordWrap" WidthRequest="450" >
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="• " FontAttributes="Bold" FontSize="25" />
+                                        <Span Text=" Ensure the image is correctly oriented, following any specific requirements if necessary." FontSize="14" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label LineBreakMode="WordWrap" WidthRequest="450" >
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="• " FontAttributes="Bold" FontSize="25" />
+                                        <Span Text="If the task specifically requires a white paper background, make sure to follow this instruction." FontSize="14" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
 
                         </VerticalStackLayout>
 
@@ -149,7 +223,7 @@
 
             </VerticalStackLayout>
 
-            <VerticalStackLayout BackgroundColor="Orange" HeightRequest="55">
+            <VerticalStackLayout BackgroundColor="LightSkyBlue" HeightRequest="55">
             </VerticalStackLayout>
 
         </VerticalStackLayout>

@@ -3,11 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PD_UI.ViewModel.HandDrawing.ActualPredict"
              Title="ActualPredict">
-    <ScrollView>
-       
-            <VerticalStackLayout>
+    
+    <ScrollView >
 
-                <VerticalStackLayout BackgroundColor="Orange" HeightRequest="88" WidthRequest="1500" HorizontalOptions="Start" >
+        <VerticalStackLayout>
+
+                <VerticalStackLayout BackgroundColor="LightSkyBlue" HeightRequest="88" WidthRequest="1500" HorizontalOptions="Start" >
                     <Label FontSize="38" FontAttributes="Bold" FontFamily="Times New Roman" Padding="20" TextColor="White">Upload Image</Label>
                     <HorizontalStackLayout>
                         <Image Source="C:\Users\USER\Desktop\MAUI_APP\PD_UI\Resources\Images\logopdnew.png" 
@@ -53,8 +54,8 @@
 
 
                                 <Label
-                                Text="Upload Autual Image!"
-                                FontSize="20"
+                                Text="Upload Your Image!"
+                                FontSize="15"
                                 HorizontalOptions="Center" 
                                 Margin="150,50,0,100"/>
 
@@ -64,6 +65,7 @@
                                 HorizontalOptions="Center"
                                 BackgroundColor="Green"
                                 Margin="140,-100,0,0"/>
+                          
 
                             </VerticalStackLayout>
                         </HorizontalStackLayout>
@@ -75,7 +77,26 @@
                         HorizontalOptions="End">
 
                             <VerticalStackLayout>
-                                <Label
+
+                            <HorizontalStackLayout>
+                                <Label FontSize="18" 
+                                   x:Name="NameLabel" 
+                                    FontAttributes="Bold" 
+                                   FontFamily="Times New Roman"
+                                   Margin="30,10,0,-10"
+                                   Text="Name:"/>
+
+                                <Label FontSize="18" 
+                                       x:Name="AgeLabel" 
+                                       FontAttributes="Bold" 
+                                       FontFamily="Times New Roman"
+                                       Margin="100,10,0,-10"
+                                       Text="Age:"/>
+                            </HorizontalStackLayout>
+                            
+
+
+                            <Label
                                     Text="Prediction: "
                                     FontAttributes="Bold" FontFamily="Times New Roman"
                                     FontSize="30"
@@ -86,7 +107,8 @@
                                     x:Name="ApiResponseLabel"
                                     Margin="100,0,-1000,0"
                                     TextColor="Black"
-                                    
+                                    FontSize="Medium"
+                                    FontAttributes="Bold" FontFamily="Times New Roman"
                                     Text=""/>
 
                                 <Label
@@ -131,7 +153,7 @@
 
                 </VerticalStackLayout>
 
-                <VerticalStackLayout BackgroundColor="Orange" HeightRequest="55">
+                <VerticalStackLayout BackgroundColor="LightSkyBlue" HeightRequest="55">
                 </VerticalStackLayout>
 
             </VerticalStackLayout>

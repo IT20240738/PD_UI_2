@@ -1,4 +1,7 @@
 namespace PD_UI.ViewModel.HandDrawing;
+using Microsoft.Maui.Controls;
+using Windows.Devices.Display.Core;
+
 
 public partial class DetailPage : ContentPage
 {
@@ -7,23 +10,44 @@ public partial class DetailPage : ContentPage
 		InitializeComponent();
 	}
 
-    private void NextClicked(object sender, EventArgs e)
+    private  void NextClicked(object sender, EventArgs e)
     {
-        bool selectedOption1 = option1.IsChecked;
-        bool selectedOption2 = option2.IsChecked;
-        bool selectedOption3 = option3.IsChecked;
+        string name = NameEntry.Text;
+        string age = AgeEntry.Text;
+        bool isMale = option6.IsChecked;
+        bool isFemale = option7.IsChecked;
+        bool hasHandTremor = option1.IsChecked;
+        bool hasLossOfSmell = option2.IsChecked;
+        bool hasLossOfTaste = option3.IsChecked;
+        bool hasTroubleSleeping = option4.IsChecked;
+        bool hasDizzinessOrFainting = option5.IsChecked;
+        int age1;
 
-        if (selectedOption1 && !selectedOption2)
+        // Check for validation errors
+        if (string.IsNullOrWhiteSpace(name) || !int.TryParse(age, out age1) || age1 < 18 || (!isMale && !isFemale)
+            || (!hasHandTremor && !hasLossOfSmell && !hasLossOfTaste && !hasTroubleSleeping && !hasDizzinessOrFainting))
         {
-            //resultLabel.Text = "Hello";
-            // Navigate to Page 1
-            // Use the navigation mechanism of your MAUI application to navigate to Page 1.
-            Navigation.PushModalAsync(new ActualPredict());
+            DisplayAlert("Validation Error", "Please fill in all required information.", "OK");
+            AgeErrorLabel.IsVisible = true; // Display error message
+            return;
+        }
+        if (!int.TryParse(age, out age1) || age1 < 18)
+        {
+             AgeErrorLabel.IsVisible = true;
         }
         else
         {
-            // resultLabel.Text = "No radio button selected";
-            Navigation.PushModalAsync(new TestPredict());
+            AgeErrorLabel.IsVisible = false; // Hide error message
+            // Process the data here.
+            Navigation.PushModalAsync(new ActualPredict(NameEntry.Text, AgeEntry.Text));
+            //Navigation.PushModalAsync(actualPredict);
+
+         
+
         }
+
+
     }
+
+  
 }
